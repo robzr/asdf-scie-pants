@@ -21,5 +21,5 @@ jobs:
         with:
           command: |
             echo -e '[GLOBAL]\npants_version = "2.19.0"' > pants.toml
-            scie-pants help
+            pants help
 
