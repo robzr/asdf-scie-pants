@@ -49,6 +49,6 @@ release_file="$ASDF_DOWNLOAD_PATH/scie-pants-${OS}-${ARCH}"
 
 download_release "$ASDF_INSTALL_VERSION" "$release_file"
 
-release_file_target="$ASDF_DOWNLOAD_PATH/scie-pants"
+release_file_target="$ASDF_DOWNLOAD_PATH/pants"
 
 mv "$release_file" "$release_file_target"

@@ -3,8 +3,8 @@
 set -euo pipefail
 
 GH_REPO="https://github.com/pantsbuild/scie-pants"
-TOOL_NAME="scie-pants"
-TOOL_TEST="scie-pants --help"
+TOOL_NAME="pants"
+TOOL_TEST="pants --help"
 
 fail() {
 	echo -e "asdf-$TOOL_NAME: $*"
@@ -57,7 +57,6 @@ install_version() {
 		mkdir -p "$install_path"
 		cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
 
-		# TODO: Assert scie-pants executable exists.
 		local tool_cmd
 		tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
 		test -x "$install_path/$tool_cmd" || fail "Expected $install_path/$tool_cmd to be executable."

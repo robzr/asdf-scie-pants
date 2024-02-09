@@ -1,8 +1,8 @@
 <div align="center">
 
-# asdf-scie-pants [![Build](https://github.com/robzr/asdf-scie-pants/actions/workflows/build.yml/badge.svg)](https://github.com/robzr/asdf-scie-pants/actions/workflows/build.yml) [![Lint](https://github.com/robzr/asdf-scie-pants/actions/workflows/lint.yml/badge.svg)](https://github.com/robzr/asdf-scie-pants/actions/workflows/lint.yml)
+# asdf-pants [![Build](https://github.com/robzr/asdf-pants/actions/workflows/build.yml/badge.svg)](https://github.com/robzr/asdf-pants/actions/workflows/build.yml) [![Lint](https://github.com/robzr/asdf-pants/actions/workflows/lint.yml/badge.svg)](https://github.com/robzr/asdf-pants/actions/workflows/lint.yml)
 
-[scie-pants](https://www.pantsbuild.org/2.18/docs/getting-started/installing-pants) plugin for the [asdf version manager](https://asdf-vm.com).
+[pants](https://www.pantsbuild.org/2.18/docs/getting-started/installing-pants) plugin for the [asdf version manager](https://asdf-vm.com).
 
 </div>
 
@@ -25,25 +25,25 @@
 Plugin:
 
 ```shell
-asdf plugin add scie-pants
+asdf plugin add pants
 # or
-asdf plugin add scie-pants https://github.com/robzr/asdf-scie-pants.git
+asdf plugin add pants https://github.com/robzr/asdf-pants.git
 ```
 
-scie-pants:
+pants:
 
 ```shell
 # Show all installable versions
-asdf list-all scie-pants
+asdf list-all pants
 
 # Install specific version
-asdf install scie-pants latest
+asdf install pants latest
 
 # Set a version globally (on your ~/.tool-versions file)
-asdf global scie-pants latest
+asdf global pants latest
 
-# Now scie-pants commands are available
-scie-pants --help
+# Now pants commands are available
+pants --help
 ```
 
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
@@ -53,7 +53,7 @@ install & manage versions.
 
 Contributions of any kind welcome! See the [contributing guide](contributing.md).
 
-[Thanks goes to these contributors](https://github.com/robzr/asdf-scie-pants/graphs/contributors)!
+[Thanks goes to these contributors](https://github.com/robzr/asdf-pants/graphs/contributors)!
 
 # License
 

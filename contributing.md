@@ -6,7 +6,7 @@ Testing Locally:
 asdf plugin test <plugin-name> <plugin-url> [--asdf-tool-version <version>] [--asdf-plugin-gitref <git-ref>] [test-command*]
 
 # TODO: adapt this
-asdf plugin test scie-pants https://github.com/robzr/asdf-scie-pants.git "scie-pants --help"
+asdf plugin test pants https://github.com/robzr/asdf-pants.git "pants --help"
 ```
 
 Tests are automatically run in GitHub Actions on push and PR.
