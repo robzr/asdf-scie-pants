@@ -2,7 +2,7 @@
 
 # asdf-scie-pants [![Build](https://github.com/robzr/asdf-scie-pants/actions/workflows/build.yml/badge.svg)](https://github.com/robzr/asdf-scie-pants/actions/workflows/build.yml) [![Lint](https://github.com/robzr/asdf-scie-pants/actions/workflows/lint.yml/badge.svg)](https://github.com/robzr/asdf-scie-pants/actions/workflows/lint.yml)
 
-[scie-ants](https://www.pantsbuild.org/2.18/docs/getting-started/installing-pants) plugin for the [asdf version manager](https://asdf-vm.com).
+[scie-pants](https://www.pantsbuild.org/2.19/docs/getting-started/installing-pants) plugin for the [asdf version manager](https://asdf-vm.com).
 
 </div>
 
