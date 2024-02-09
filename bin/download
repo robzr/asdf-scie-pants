@@ -2,6 +2,38 @@
 
 set -euo pipefail
 
+# shellcheck disable=SC2317
+function fail() {
+	echo -e "asdf-$TOOL_NAME: $*" >&2
+	exit 1
+}
+
+function calculate_arch() {
+	local arch
+
+	arch="$(uname -m)"
+	if [[ "${arch}" =~ x86[_-]64 ]]; then
+		echo x86_64
+	elif [[ "${arch}" =~ arm64|aarch64 ]]; then
+		echo aarch64
+	else
+		fail "Pants is not supported for this chip architecture (${arch})."
+	fi
+}
+
+function calculate_os() {
+	local os
+
+	os="$(uname -s)"
+	if [[ "${os}" =~ [Ll]inux ]]; then
+		echo linux
+	elif [[ "${os}" =~ [Dd]arwin ]]; then
+		echo macos
+	else
+		fail "Pants is not supported on this operating system (${os})."
+	fi
+}
+
 current_script_path=${BASH_SOURCE[0]}
 plugin_dir=$(dirname "$(dirname "$current_script_path")")
 
@@ -10,14 +42,13 @@ source "${plugin_dir}/lib/utils.bash"
 
 mkdir -p "$ASDF_DOWNLOAD_PATH"
 
-# TODO: Adapt this to proper extension and adapt extracting strategy.
-release_file="$ASDF_DOWNLOAD_PATH/$TOOL_NAME-$ASDF_INSTALL_VERSION.tar.gz"
+ARCH=$(calculate_arch)
+OS=$(calculate_os)
 
-# Download tar.gz file to the download directory
+release_file="$ASDF_DOWNLOAD_PATH/scie-pants-${OS}-${ARCH}"
+
 download_release "$ASDF_INSTALL_VERSION" "$release_file"
 
-#  Extract contents of tar.gz file into the download directory
-tar -xzf "$release_file" -C "$ASDF_DOWNLOAD_PATH" --strip-components=1 || fail "Could not extract $release_file"
+release_file_target="$ASDF_DOWNLOAD_PATH/scie-pants"
 
-# Remove the tar.gz file since we don't need to keep it
-rm "$release_file"
+mv "$release_file" "$release_file_target"
