@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/robzr/asdf-scie-pants/compare/v1.0.0...v1.0.1) (2024-02-09)
+
+
+### Bug Fixes
+
+* correct type-o ([02f3451](https://github.com/robzr/asdf-scie-pants/commit/02f34519edc6f75f3ca8313a5d2e6a9c5a917eac))
+
 ## 1.0.0 (2024-02-09)
 
 
